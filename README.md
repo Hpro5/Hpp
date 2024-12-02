@@ -1,6 +1,3 @@
-Make a README
-Sure! Here's a detailed README for the Ham++ programming language, outlining its features and usage:
-
 Ham++ Programming Language
 Ham++ is a simple, custom programming language designed for learning and creating basic programs. It supports boolean variables, conditional statements, loops, functions, and basic input/output operations. This README will guide you through the language's features and provide examples to get you started.
 
