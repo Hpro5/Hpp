@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ham++ Programming Language</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #000;
@@ -46,7 +47,7 @@
         .download-button:hover {
             background-color: #0056b3;
         }
-        pre {
+        pre, code {
             background-color: #333;
             padding: 20px;
             border: none;
@@ -79,21 +80,24 @@
         <h2>Welcome to Ham++</h2>
         <p>Ham++ is a simple, custom programming language designed for learning and creating basic programs. Below you'll find the detailed README outlining its features and usage.</p>
         <p>Updates:</p>
-        <p>-Added the Color command</p>
-        <p>-MONTHLY CHALANGE NOW LIVE!</p>
-        <p>-You can make and sumbmit your videogame and submit it to Haami.hosseinzadeh+chalange@gmail.com</p>
+        <ul>
+            <li>Added the Color command</li>
+            <li>MONTHLY CHALLENGE NOW LIVE!</li>
+            <li>You can make and submit your video game to <a href="mailto:Haami.hosseinzadeh+chalange@gmail.com">Haami.hosseinzadeh+chalange@gmail.com</a></li>
+        </ul>
         <a href="Ham++.exe" class="download-button">Download for Windows</a>
         <h2>README</h2>
-        <pre id="readme-content">Loading README...</pre>
+        <div id="readme-content">Loading README...</div>
     </div>
     <div class="footer">
         <p>© 2024 Ham++ Development Team</p>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.2/marked.min.js"></script>
     <script>
         fetch('README.md')
         .then(response => response.text())
         .then(text => {
-            document.getElementById('readme-content').textContent = text;
+            document.getElementById('readme-content').innerHTML = marked(text);
         })
         .catch(error => {
             document.getElementById('readme-content').textContent = 'Error loading README.md';
