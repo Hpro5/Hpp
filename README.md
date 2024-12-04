@@ -1,6 +1,9 @@
+write a new README
+Sure! Here's a detailed README for the Ham++ programming language, outlining its features, usage, and example scripts. This README will guide users through the language and its commands.
+
 Ham++ Programming Language
-Ham++ is a simple, custom programming language designed for learning and creating basic programs. It supports boolean variables, conditional statements, loops, functions, and basic input/output operations. This README will guide you through the language's features and provide examples to get you started.
-(you can downlad it here: https://hpro5.github.io/Hpp/)
+Welcome to Ham++, a simple, custom programming language designed for learning and creating basic programs. With support for boolean variables, conditional statements, loops, functions, color manipulation, and basic input/output operations, Ham++ is ideal for both beginners and experienced programmers looking to explore a new language.
+
 Features
 Boolean Variables: Declare and manipulate boolean variables.
 
@@ -9,6 +12,8 @@ Conditional Statements: If and else blocks for conditional execution.
 Loops: funcloop for repeated execution of code blocks.
 
 Functions: Define and call functions.
+
+Color Manipulation: Change the print color using RGB values.
 
 Input/Output: Print text and boolean values.
 
@@ -78,7 +83,23 @@ func greet {
     PrintStr "Hello, World!"
 }
 RUN greet
-5. Input/Output
+5. Color Manipulation
+Change the print color using RGB values.
+
+Syntax:
+
+plaintext
+Color [r] [g] [b]
+Example:
+
+plaintext
+Color 255 0 0
+PrintStr "This text is red"
+Color 0 255 0
+PrintStr "This text is green"
+Color 0 0 255
+PrintStr "This text is blue"
+6. Input/Output
 Print text and boolean values.
 
 Syntax:
@@ -94,3 +115,38 @@ Bool flag 1
 PrintStr "Initial State:"
 Print flag
 PrintLn flag 1
+Example Program
+Here's a simple example of a Ham++ program that demonstrates various features of the language:
+
+plaintext
+Bool pos00 1
+Bool pos01 0
+Bool pos02 0
+Bool pos03 0
+Bool pos04 0
+
+func printGrid {
+    Print pos00
+    Print pos01
+    Print pos02
+    Print pos03
+    PrintLn pos04 1
+}
+
+If pos00 {
+    PrintStr "Starting the grid:"
+    RUN printGrid
+} else {
+    PrintStr "Grid is empty"
+}
+
+funcloop loopTest 3 {
+    Switch pos00
+    PrintStr "Inside Loop:"
+    RUN printGrid
+}
+Running Your Program
+To run a Ham++ program, save your code in a text file (e.g., program.ham) and use the interpreter to execute it.
+
+plaintext
+Run program.ham
